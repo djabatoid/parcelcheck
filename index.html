@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверка на имот преди покупка | ParcelCheck</title>
+  <meta name="description" content="Какво да проверите преди да купите парцел, къща или апартамент в България. Практичен списък за документи, кадастър, тежести и достъп.">
+  <link rel="canonical" href="https://parcelcheck.eu/">
+  <meta name="theme-color" content="#142e2c">
+  <style>
+    :root { color-scheme: light; --ink: #142e2c; --muted: #435953; --paper: #f5f7f1; --line: #c8d3c8; --accent: #d9ed9e; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.6 system-ui, sans-serif; }
+    .wrap { width: min(72rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    .masthead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 2rem; padding-block: 1rem; }
+    .brand { font-size: 1.2rem; font-weight: 800; letter-spacing: -.04em; }
+    a { color: inherit; text-underline-offset: .2em; }
+    a:focus-visible, input:focus-visible { outline: 3px solid #a26400; outline-offset: 4px; }
+    .hero { background: var(--ink); color: var(--paper); padding-block: clamp(3rem, 8vw, 7rem); }
+    .hero .wrap { display: grid; gap: 2.5rem; grid-template-columns: 1.55fr 1fr; align-items: center; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { max-width: 13ch; font-size: clamp(2.5rem, 6.4vw, 5.25rem); line-height: 1.02; letter-spacing: -.06em; }
+    .hero p { margin-top: 1.3rem; max-width: 49ch; color: #dbe6dc; font-size: 1.12rem; }
+    .button { display: inline-block; margin-top: 1.35rem; background: var(--accent); color: var(--ink); padding: .72rem 1.12rem; font-weight: 750; text-decoration: none; border-radius: .25rem; }
+    .button:hover { background: #c5e27a; }
+    .plan { width: 100%; color: #8aa698; }
+    .checklist { padding-block: clamp(2.75rem, 7vw, 5rem); }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.65rem); letter-spacing: -.04em; line-height: 1.15; }
+    .intro { color: var(--muted); margin-top: .7rem; }
+    .checklist-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem 1rem; margin-top: 1rem; }
+    .checklist-toolbar[hidden] { display: none; }
+    .checklist-toolbar output { font-weight: 700; }
+    .secondary { font: inherit; font-weight: 650; color: var(--ink); background: transparent; border: 1px solid #778e83; border-radius: .25rem; padding: .4rem .75rem; cursor: pointer; }
+    .secondary:hover, .secondary:focus-visible { background: #e5ecdf; }
+    button:focus-visible { outline: 3px solid #a26400; outline-offset: 4px; }
+    .cards li:has(input:checked) { background: #edf4df; border-color: #83966f; }
+    .before { max-width: 72ch; margin-top: 1.35rem; padding: .9rem 1rem; border-inline-start: 4px solid #799450; background: #e9efdf; }
+    .cards { list-style: none; padding: 0; margin: 1.65rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+    .cards li { padding: 1.3rem; border: 1px solid var(--line); border-radius: .4rem; background: #fff; }
+    .cards h3 { font-size: 1.18rem; line-height: 1.3; }
+    label { display: flex; align-items: baseline; gap: .65rem; cursor: pointer; }
+    input { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin: 0; accent-color: #226153; }
+    .cards p { margin: .6rem 0 0 1.75rem; color: var(--muted); }
+    .contact { border-top: 1px solid var(--line); padding-block: 2.5rem 3.25rem; }
+    .contact p { max-width: 65ch; margin-top: .75rem; }
+    .contact .note { color: var(--muted); }
+    @media (max-width: 46rem) {
+      .hero .wrap, .cards { grid-template-columns: 1fr; }
+      .plan { display: none; }
+    }
+    @media print {
+      body, .hero { background: white; color: black; }
+      .hero p, .cards p, .contact .note { color: black; }
+      .masthead a, .hero .button, .plan, .checklist-toolbar button { display: none; }
+      .hero, .checklist, .contact { padding-block: 1rem; }
+      .hero .wrap { display: block; }
+      h1 { max-width: none; font-size: 2rem; }
+      .cards { display: block; }
+      .cards li { break-inside: avoid; margin-bottom: .35rem; padding: .55rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap masthead">
+    <span class="brand">ParcelCheck.eu</span>
+    <a href="#proverka">Професионална проверка</a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <h1>Проверка на имот преди покупка</h1>
+          <p>Купувате парцел, къща или апартамент? Съберете документите и изяснете какво купувате, преди да платите капаро или да подпишете предварителен договор.</p>
+          <a class="button" href="#spisak">Към списъка за проверка</a>
+        </div>
+        <svg class="plan" viewBox="0 0 420 306" aria-hidden="true" focusable="false">
+          <defs>
+            <pattern id="grid" width="21" height="21" patternUnits="userSpaceOnUse">
+              <path d="M21 0H0V21" stroke="currentColor" stroke-opacity=".24" fill="none"/>
+            </pattern>
+          </defs>
+          <rect width="420" height="306" fill="url(#grid)"/>
+          <g fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M30 76L330 24 392 226 86 281Z M42 117L342 63 M113 61L167 266 M215 43L271 248 M61 185L361 131 M76 241L380 185"/>
+          </g>
+          <path d="M129 101L232 82 251 151 148 169Z" stroke="#d9ed9e" stroke-width="3" fill="#d9ed9e" fill-opacity=".23"/>
+          <g fill="#d9ed9e">
+            <circle cx="129" cy="101" r="4"/><circle cx="232" cy="82" r="4"/>
+            <circle cx="251" cy="151" r="4"/><circle cx="148" cy="169" r="4"/>
+          </g>
+        </svg>
+      </div>
+    </section>
+    <section class="wrap checklist" id="spisak" aria-labelledby="check-title">
+      <h2 id="check-title">Какво да проверите</h2>
+      <p class="intro">Отбелязвайте стъпките, които сте проверили.</p>
+      <div class="checklist-toolbar" hidden>
+        <output id="progress" aria-live="polite"></output>
+        <button class="secondary" type="button" id="print">Печат</button>
+        <button class="secondary" type="button" id="reset">Изчисти отметките</button>
+      </div>
+      <ul class="cards" role="list">
+        <li>
+          <h3><label><input type="checkbox" name="ownership">Собственост и право на продажба</label></h3>
+          <p>Поискайте документа за собственост. Нека нотариус или адвокат провери кой има право да продава и дали са нужни документи от съсобственици, наследници или пълномощник.</p>
+        </li>
+        <li>
+          <h3><label><input type="checkbox" name="encumbrances">Тежести и вписани права</label></h3>
+          <p>Поискайте актуално <a href="https://portal.registryagency.bg/bg/page/104">удостоверение за имота</a>. Нека нотариус или адвокат прегледа вписаните ипотеки, възбрани и други права и провери дали справката обхваща нужния период.</p>
+        </li>
+        <li>
+          <h3><label><input type="checkbox" name="cadastre">Кадастър и реални граници</label></h3>
+          <p>Намерете имота в <a href="https://kais.cadastre.bg/bg/Map/Index">кадастралната карта на АГКК</a>. Сравнете идентификатора, площта и описанието в документа за собственост с актуална скица или схема. При парцел и съмнение къде минават границите потърсете геодезист за проверка на място.</p>
+        </li>
+        <li>
+          <h3><label><input type="checkbox" name="access">Достъп и инфраструктура</label></h3>
+          <p>При парцел или къща проверете дали имотът има пряк достъп до обществен път и на какво основание се преминава, ако достъпът е през чужд имот. Проверете при операторите има ли присъединяване или какви са условията за ток, вода и канализация.</p>
+        </li>
+        <li>
+          <h3><label><input type="checkbox" name="planning">Регулация и възможност за строеж</label></h3>
+          <p>Ако купувате за строителство, поискайте от общината информация за действащия подробен устройствен план (ПУП), предназначението, параметрите на застрояване и ограниченията за имота.</p>
+        </li>
+        <li>
+          <h3><label><input type="checkbox" name="building">Документи за сградата</label></h3>
+          <p>При къща или апартамент поискайте приложимите строителни документи и документа за въвеждане в експлоатация, когато се изисква. При пристройки или преустройства проверете дали са отразени в документите.</p>
+        </li>
+      </ul>
+      <p class="before"><strong>Преди да платите капаро</strong> уточнете писмено при какви условия сумата се връща, ако проверката установи проблем със собствеността, тежестите или документите. При разминаване в площта, границите или достъпа поискайте проверка, преди да поемете ангажимент.</p>
+    </section>
+    <section class="wrap contact" id="proverka" aria-labelledby="contact-title">
+      <h2 id="contact-title">Професионална проверка от „Десплан“</h2>
+      <p>За проверка на кадастралните данни, границите и регулацията се свържете с „Десплан“ ООД. Подгответе адреса, кадастралния идентификатор и наличната скица или схема.</p>
+      <a class="button" href="https://desplan.eu/">Свържете се с „Десплан“</a>
+      <p class="note">За правната проверка на собствеността и тежестите се обърнете към нотариус или адвокат по имотни сделки.</p>
+    </section>
+  </main>
+  <script>
+    const storageKey = 'parcelcheck-checklist-v1';
+    const checklist = document.querySelector('.cards');
+    const checks = [...checklist.querySelectorAll('input[type="checkbox"]')];
+    const progress = document.getElementById('progress');
+
+    function updateProgress() {
+      const completed = checks.filter((check) => check.checked);
+      progress.textContent = 'Отбелязани ' + completed.length + ' от ' + checks.length;
+      return completed.map((check) => check.name);
+    }
+
+    function saveProgress() {
+      const completed = updateProgress();
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(completed));
+      } catch {
+        // The checklist still works when browser storage is unavailable.
+      }
+    }
+
+    try {
+      const saved = JSON.parse(localStorage.getItem(storageKey));
+      if (Array.isArray(saved)) {
+        checks.forEach((check) => { check.checked = saved.includes(check.name); });
+      }
+    } catch {
+      // Invalid or unavailable stored data should not block the page.
+    }
+
+    updateProgress();
+    document.querySelector('.checklist-toolbar').hidden = false;
+    checklist.addEventListener('change', saveProgress);
+    document.getElementById('print').addEventListener('click', () => window.print());
+    document.getElementById('reset').addEventListener('click', () => {
+      checks.forEach((check) => { check.checked = false; });
+      saveProgress();
+    });
+  </script>
+</body>
+</html>
